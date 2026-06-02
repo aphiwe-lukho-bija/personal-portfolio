@@ -73,9 +73,9 @@ body {
 
 /* ====== 3. SECTIONS + HEADINGS ====== */
 section {
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 40px;
+  max-width: 1350px;
+  margin: 45px auto;
+  padding: 55px 90px;
   background: rgba(245, 241, 232, 0.95);
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -343,4 +343,62 @@ footer {
     width: 200px;
     padding: 14px;
   }
+}
+
+/* ====== CONTACT FORM - NEW ADDITIONS ====== */
+.contact-form {
+  max-width: 650px;
+  margin: 40px auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  font-size: 18px;
+  color: #2c2416;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #8b6f47;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: 'Georgia', serif;
+  background: #fff;
+  box-sizing: border-box;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #2c2416;
+  box-shadow: 0 0 8px rgba(139, 111, 71, 0.3);
+}
+
+.contact-info {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 16px;
+  color: #5a4a30;
+}
+
+/* ====== THANK YOU PAGE - NEW ADDITIONS ====== */
+.thankyou-content {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.thankyou-text {
+  font-size: 20px;
+  margin: 15px 0;
+  color: #2c2416;
 }
