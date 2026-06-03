@@ -72,10 +72,11 @@ body {
 }
 
 /* ====== 3. SECTIONS + HEADINGS ====== */
+/* ====== SECTION CONTAINER - READABLE WIDTH ====== */
 section {
-  max-width: 1350px;
+  max-width: 1200px; /* dropped from 1350px for better reading */
   margin: 45px auto;
-  padding: 55px 90px;
+  padding: 55px 65px; /* reduced from 90px → brings text inward */
   background: rgba(245, 241, 232, 0.95);
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
