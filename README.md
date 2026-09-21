@@ -16,35 +16,84 @@ Short-term and long-term goals in tech and entrepreneurship. Clean layout with c
 **Contact Me**
 Contact details: Email, LinkedIn, GitHub, Location. Consistent round profile picture.
 
-## HTML/CSS Concepts Used
-Semantic HTML5 tags: header, section, nav, footer
-CSS Flexbox for layout and centering
-Responsive design with media queries
-CSS animations and transitions: hover effects, fade-in
-CSS background images and gradients
-Border-radius for round images
-Box-shadow for depth and professional look
-Sticky navigation bar
-Custom color palette with woody theme
+
+
+
+
+# Aphiwe Lukho Bija - Vue Portfolio
+
+This is a personal portfolio website built with **Vue 3** and **Vite**. The original portfolio used separate static HTML pages. It was converted into a Vue single-page application so that the content and navigation can update without refreshing the browser.
+
+## Features
+
+- Home page with introduction and profile image
+- About, Goals, Interests, and Contact views
+- Reactive navigation using Vue
+- Data-driven interest cards using `v-for`
+- Reactive contact form using `v-model`
+- Responsive layout for desktop and mobile screens
+- CSS animations and custom styling
+
+## Project Structure
+
+```text
+personal-portfolio/
+├── index.html          # Vite entry page
+├── package.json        # Project scripts and dependencies
+├── vite.config.js      # Vite and Vue configuration
+├── src/
+│   ├── App.vue         # Main Vue application
+│   ├── main.js         # Creates and mounts the Vue app
+│   └── style.css       # Vue app styling
+└── legacy-static/      # Original HTML version kept for reference
+```
 
 ## How to Run
-Make sure you have a web browser installed
-Clone this repo or download the files
-Open the project folder
-Open index.html in your browser
-Click navigation links to view all 5 pages
 
-## Challenges I Faced
-The main issue was making all profile pictures the same size and shape across 5 different pages. Each page had different HTML structure so CSS kept breaking.
-I fixed this by creating shared CSS classes like .home-pic, .profile-round, .goals-pic and applying the same 180px round styling to all of them.
+Open a terminal in the project folder:
 
-## What I Learned  
-How to structure a multi-page website with consistent navigation
-How to use CSS classes to keep styling consistent across pages
-The importance of responsive design for mobile users
-How to create animations using only CSS, no JavaScript
-How to organize CSS code with comments and sections
-How to center content using Flexbox
+```powershell
+cd C:\Users\Trainee\Desktop\portfolio\personal-portfolio
+npm.cmd install
+npm.cmd run dev
+```
+
+Open the local address shown in the terminal, usually:
+
+```text
+http://localhost:5173
+```
+
+To create a production build:
+
+```powershell
+npm.cmd run build
+```
+
+## How the Conversion Was Done
+
+1. Added Vue 3 and the Vite Vue plugin to the project.
+2. Created `src/main.js` to mount the Vue application to `#app`.
+3. Moved the portfolio content into `src/App.vue`.
+4. Replaced separate HTML page links with Vue navigation and reactive view switching.
+5. Used `v-if` for different views, `v-for` for interest cards, and `v-model` for the contact form.
+6. Moved the new design styles into `src/style.css`.
+
+## Challenges Faced
+
+- Understanding the Vue project structure and how `main.js`, `App.vue`, and `index.html` work together.
+- Moving content from several static HTML pages into one Vue application.
+- Keeping the navigation and contact form interactive without full-page reloads.
+- Running commands from the correct folder because `package.json` is inside `personal-portfolio`.
+- PowerShell blocked the normal `npm` command, so `npm.cmd` was used instead.
+
+## What I Learned
+
+- How to create and mount a Vue 3 application.
+- How Vue directives such as `v-if`, `v-for`, and `v-model` work.
+- How reactive state can control navigation and form feedback.
+- How Vue and Vite work together during development and production builds.
 
 ## Author
+
 Aphiwe Lukho Bija
