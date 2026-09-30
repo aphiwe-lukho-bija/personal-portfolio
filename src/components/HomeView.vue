@@ -8,9 +8,9 @@
 // component that only shows when currentView === 'home'.
 // ---------------------------------------------------------------------------
 
-// my photo. it is hosted on imgbb so the image loads without me having to
-// download it into the project folder.
-const profileImage = 'https://i.ibb.co/rGQ067W2/IMG-1049-2.jpg'
+// my photo. I also moved this one into public/images for the same reason as the
+// interests pictures, the imgbb link was slow to load.
+const profileImage = '/images/profile.jpg'
 
 // I do not have the navigation logic here, I only tell App.vue that somebody
 // clicked "Get to know me" and App.vue does the actual page change.

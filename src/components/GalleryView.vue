@@ -12,36 +12,43 @@
 // NOTE TO SELF: I first wrote this as an array of arrays
 // ['Soccer', 'I support...', 'image link'] and then I had to remember which
 // number was which. Objects with names are much easier to read.
+
+// NOTE 2: I used to link the pictures straight from imgbb, but they were the
+// full size originals (one was 8MB!) and the page was painfully slow and the
+// pictures sometimes did not load at all. So I downloaded them into
+// public/images and made them smaller. Now they are inside the project and
+// they load straight away. The files in that folder start with a forward
+// slash because everything in public/ is served from the root of the site.
 const interests = [
   {
     title: 'Reading & Self Development',
     text: 'Reading puts me in a flow state. I enjoy learning from self-development books.',
-    image: 'https://i.ibb.co/twjRstS1/jodie-cook-7y-P7fd-YOIEM-unsplash.jpg'
+    image: '/images/reading.jpg'
   },
   {
     title: 'Soccer',
     text: 'I support Manchester City and never miss the chance to watch my team play.',
-    image: 'https://i.ibb.co/gM7YNkTb/jonny-gios-r-CD5-ZCCc-IZU-unsplash.jpg'
+    image: '/images/soccer.jpg'
   },
   {
     title: 'Programming',
     text: 'Coding is more than a career to me. I love solving problems and building useful things.',
-    image: 'https://i.ibb.co/KccnnY7c/ilya-pavlov-Oqtaf-YT5k-Tw-unsplash.jpg'
+    image: '/images/programming.jpg'
   },
   {
     title: 'Amapiano Music',
     text: 'I enjoy relaxed Amapiano by Kelvin Momo and Kabza De Small.',
-    image: 'https://i.ibb.co/Dx0KWcf/romina-veliz-DGKJz-Omjy-S4-unsplash.jpg'
+    image: '/images/amapiano.jpg'
   },
   {
     title: 'Long Distance Running',
     text: 'Health is wealth, so I stay fit with long-distance treadmill runs.',
-    image: 'https://i.ibb.co/gF9QYZTH/martins-zemlickis-NPFu4-Gf-FZ7-E-unsplash.jpg'
+    image: '/images/running.jpg'
   },
   {
     title: 'Public Speaking',
     text: 'GBVF Ambassador training strengthened my confidence and presentation skills.',
-    image: 'https://i.ibb.co/LztgpcDX/herlambang-tinasih-gusti-ym-Bs1m-Vim8-unsplash.jpg'
+    image: '/images/public-speaking.jpg'
   }
 ]
 
