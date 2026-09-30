@@ -1,7 +1,332 @@
+/* ===========================================================================
+   style.css
+   All the styling for the Vue version of my portfolio.
+   The colours stay the same as the old html version: cream background, dark
+   green text and the orange accent.
+
+   I wrote the sections in the order that I needed them while building the
+   pages, so the file is not perfectly organised but it makes sense to me.
+   =========================================================================== */
+
+
+/* ====== FONTS ====== */
+/* DM Sans for normal text, Playfair Display for the italic words */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
-:root { font-family: 'DM Sans', sans-serif; color: #24332d; background: #f4f0e8; font-synthesis: none; }
-* { box-sizing: border-box; } body { margin: 0; } button, input, textarea { font: inherit; } button { cursor: pointer; }
-.app-shell { min-height: 100vh; background: radial-gradient(circle at 85% 12%, #dbe7df 0, transparent 28%), #f4f0e8; padding: 0 7vw; }
-.top-bar { height: 88px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #d8d8cc; }.logo { border: 0; background: transparent; font-size: 1.5rem; font-weight: 700; color: #24332d; }.logo span, em { color: #d46d4b; } nav { display: flex; gap: 2rem; } nav button, footer button { border: 0; background: transparent; color: #647069; } nav button.active, nav button:hover { color: #d46d4b; }
-.hero { min-height: calc(100vh - 150px); display: grid; grid-template-columns: 1fr 0.8fr; align-items: center; gap: 8vw; }.eyebrow { color: #d46d4b; font-size: .72rem; font-weight: 700; letter-spacing: .14em; }.hero h1, h1 { margin: 1rem 0; font-size: clamp(3.2rem, 7vw, 6.5rem); line-height: .98; letter-spacing: -.04em; }.hero h1 em { font-family: 'Playfair Display', serif; }.lead { max-width: 520px; color: #66736b; font-size: 1.08rem; line-height: 1.7; }.primary { margin-top: 1.5rem; padding: 1rem 1.4rem; background: #24332d; color: white; border: 0; border-radius: 3px; }.primary span { margin-left: 1.5rem; color: #ef9b79; }.hero-image { position: relative; }.hero-image img { width: 100%; max-width: 410px; aspect-ratio: 4/5; object-fit: cover; filter: saturate(.8); }.image-note { position: absolute; bottom: 1.5rem; right: 0; background: #e1ece2; padding: 1rem; font-size: .75rem; line-height: 1.6; }.content-view { padding: 6rem 0; }.narrow { max-width: 820px; margin: auto; min-height: calc(100vh - 150px); }.section-heading { margin-bottom: 3rem; }.section-heading h1 { font-size: clamp(3rem, 7vw, 5.5rem); }.prose { max-width: 700px; }.prose p { color: #5f6e65; font-size: 1.12rem; line-height: 1.9; margin: 0 0 1.5rem; }.interest-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }.interest-card { background: #fffdf8; }.interest-card img { width: 100%; height: 180px; object-fit: cover; }.interest-card div { padding: 1.2rem; }.interest-card h2 { font-size: 1.15rem; }.interest-card p { color: #69756e; line-height: 1.6; font-size: .9rem; } form { display: grid; gap: 1.2rem; } label { display: grid; gap: .5rem; color: #526057; font-size: .85rem; } input, textarea { border: 1px solid #d5d9cf; background: #fffdf8; padding: .9rem; color: #24332d; } textarea { resize: vertical; }.success { color: #49805d; } footer { border-top: 1px solid #d8d8cc; padding: 1.5rem 0; display: flex; justify-content: space-between; color: #7b837c; font-size: .8rem; }.view-enter { animation: rise .45s ease both; } @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
-@media (max-width: 760px) { .app-shell { padding: 0 6vw; } .top-bar { height: 72px; } nav { gap: .7rem; } nav button { font-size: .75rem; } .hero { grid-template-columns: 1fr; padding: 4rem 0; gap: 3rem; }.hero-image img { max-width: 100%; }.interest-grid { grid-template-columns: 1fr; } .content-view { padding: 4rem 0; } footer { margin-top: 2rem; } }
+
+/* ====== 1. PAGE DEFAULTS ====== */
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #24332d;
+  background: #f4f0e8;
+  font-synthesis: none; /* stops the browser from faking bold/italic */
+}
+
+* {
+  box-sizing: border-box; /* padding no longer makes boxes wider */
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input,
+textarea {
+  font: inherit; /* form fields use the same font as the page */
+}
+
+button {
+  cursor: pointer;
+}
+
+/* the soft green glow in the top right corner of the whole site */
+.app-shell {
+  min-height: 100vh;
+  background: radial-gradient(circle at 85% 12%, #dbe7df 0, transparent 28%),
+    #f4f0e8;
+  padding: 0 7vw; /* keeps the content away from the edge of the screen */
+}
+
+
+/* ====== 2. TOP BAR + NAVIGATION ====== */
+.top-bar {
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #d8d8cc;
+}
+
+.logo {
+  border: 0;
+  background: transparent;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #24332d;
+}
+
+/* the orange dot after my name, and the orange words in the headings */
+.logo span,
+em {
+  color: #d46d4b;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+nav button,
+footer button {
+  border: 0;
+  background: transparent;
+  color: #647069;
+}
+
+/* active is the class vue adds to the button of the page I am on */
+nav button.active,
+nav button:hover {
+  color: #d46d4b;
+}
+
+
+/* ====== 3. HOME (HERO) ====== */
+.hero {
+  /* minus the top bar and the footer so the hero fills one screen */
+  min-height: calc(100vh - 150px);
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  align-items: center;
+  gap: 8vw;
+}
+
+.eyebrow {
+  color: #d46d4b;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .14em; /* space out the small capital letters */
+}
+
+.hero h1,
+h1 {
+  margin: 1rem 0;
+  /* clamp keeps the heading readable on a phone and big on a laptop */
+  font-size: clamp(3.2rem, 7vw, 6.5rem);
+  line-height: .98;
+  letter-spacing: -.04em;
+}
+
+.hero h1 em {
+  font-family: 'Playfair Display', serif;
+}
+
+.lead {
+  max-width: 520px; /* long lines are hard to read, so I stop it here */
+  color: #66736b;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.primary {
+  margin-top: 1.5rem;
+  padding: 1rem 1.4rem;
+  background: #24332d;
+  color: white;
+  border: 0;
+  border-radius: 3px;
+}
+
+.primary span {
+  margin-left: 1.5rem;
+  color: #ef9b79;
+}
+
+.hero-image {
+  position: relative; /* so the note can sit on top of the photo */
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 410px;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  filter: saturate(.8); /* the photos looked too bright without this */
+}
+
+.image-note {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 0;
+  background: #e1ece2;
+  padding: 1rem;
+  font-size: .75rem;
+  line-height: 1.6;
+}
+
+
+/* ====== 4. ABOUT + GOALS (TEXT PAGES) ====== */
+.content-view {
+  padding: 6rem 0;
+}
+
+/* narrower than the other pages because it only holds text */
+.narrow {
+  max-width: 820px;
+  margin: auto;
+  min-height: calc(100vh - 150px);
+}
+
+.section-heading {
+  margin-bottom: 3rem;
+}
+
+.section-heading h1 {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+}
+
+.prose {
+  max-width: 700px;
+}
+
+.prose p {
+  color: #5f6e65;
+  font-size: 1.12rem;
+  line-height: 1.9;
+  margin: 0 0 1.5rem;
+}
+
+
+/* ====== 5. INTERESTS GRID ====== */
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 1.5rem;
+}
+
+.interest-card {
+  background: #fffdf8;
+}
+
+.interest-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover; /* keeps the pictures the same size even if they are not */
+}
+
+.interest-card div {
+  padding: 1.2rem;
+}
+
+.interest-card h2 {
+  font-size: 1.15rem;
+}
+
+.interest-card p {
+  color: #69756e;
+  line-height: 1.6;
+  font-size: .9rem;
+}
+
+
+/* ====== 6. CONTACT FORM ====== */
+form {
+  display: grid;
+  gap: 1.2rem;
+}
+
+label {
+  display: grid;
+  gap: .5rem;
+  color: #526057;
+  font-size: .85rem;
+}
+
+input,
+textarea {
+  border: 1px solid #d5d9cf;
+  background: #fffdf8;
+  padding: .9rem;
+  color: #24332d;
+}
+
+textarea {
+  resize: vertical; /* the visitor can make the box taller but not wider */
+}
+
+/* the green line that shows after the message was sent */
+.success {
+  color: #49805d;
+}
+
+
+/* ====== 7. FOOTER ====== */
+footer {
+  border-top: 1px solid #d8d8cc;
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  color: #7b837c;
+  font-size: .8rem;
+}
+
+
+/* ====== 8. PAGE ANIMATION ====== */
+/* this class is on every page section, so each time the visitor changes page
+   the new section fades in and slides up a little */
+.view-enter {
+  animation: rise .45s ease both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+/* ====== 9. MOBILE (PHONE) SCREENS ====== */
+@media (max-width: 760px) {
+  .app-shell {
+    padding: 0 6vw;
+  }
+
+  .top-bar {
+    height: 72px;
+  }
+
+  nav {
+    gap: .7rem;
+  }
+
+  nav button {
+    font-size: .75rem;
+  }
+
+  /* the two hero columns become one column on a phone */
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 4rem 0;
+    gap: 3rem;
+  }
+
+  .hero-image img {
+    max-width: 100%;
+  }
+
+  .interest-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .content-view {
+    padding: 4rem 0;
+  }
+
+  footer {
+    margin-top: 2rem;
+  }
+}

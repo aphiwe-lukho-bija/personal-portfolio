@@ -2,11 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- makes the page use the full width on a phone -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aphiwe Lukho Bija - Portfolio</title>
   </head>
   <body>
+    <!--
+      This div is empty on purpose. main.js takes my App.vue and mounts it
+      inside here, so vue fills it in when the page loads.
+    -->
     <div id="app"></div>
+
+    <!-- type="module" lets the browser use the import statements in main.js -->
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
